@@ -248,7 +248,9 @@ function loopBody(text: string, headOpen: number): string | null {
 // 23: the sync daemon walking a stream of changes, each cycle reading and writing a real root.
 // 24: the gate's changed-files list, seeded as a real git repo so `git diff` has a base to diff
 // against. It declares GIT_REPO_TIMEOUT_MS.
-const EXPECTED_IO_LOOP_FILES = 24;
+// 25: the program of the desktop HUD, which ends and is started again; the test reads the lines
+// a real program wrote until they are there. It declares HUD_PROGRAM_TIMEOUT_MS.
+const EXPECTED_IO_LOOP_FILES = 25;
 
 function testFiles(dir: string): string[] {
   const out: string[] = [];
